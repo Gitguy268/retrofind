@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retrofind</title>
+<meta name="description" content="Private web search on your own Mac, in the style of 1998: SearXNG without Docker, behind an early-Google start page in a Windows 98 liquid glass window.">
+<meta property="og:title" content="Retrofind">
+<meta property="og:description" content="Private web search on your own Mac, in the style of 1998.">
+<meta property="og:image" content="https://gitguy268.github.io/retrofind/home.png">
+<link rel="canonical" href="https://gitguy268.github.io/retrofind/">
+<link rel="icon" href="favicon.svg">
+<style>
+  :root { --raised: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf; color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 48px; background: linear-gradient(#0b4fae, #3d86d6 60%, #5f9de0) fixed; font: 16px 'Times New Roman', Times, serif; color: #000; }
+  .window { max-width: 900px; margin: 0 auto; padding: 4px; background: #c0c0c0; box-shadow: var(--raised); }
+  .titlebar { padding: 3px 6px; color: #fff; font: bold 11px Tahoma, Arial, sans-serif; background: linear-gradient(90deg, #000080, #1084d0); }
+  .page { background: #fff; padding: 32px 24px; text-align: center; }
+  h1 { margin: 0; font: bold 64px/1 Baskerville, 'Book Antiqua', Georgia, serif; }
+  h1 span { text-shadow: 3px 3px 0 #a9a9a9; }
+  .b { color: #1f3fcf; } .r { color: #d62916; } .y { color: #b07d00; } .g { color: #158a2a; }
+  img { max-width: 100%; height: auto; border: 1px solid #808080; }
+  a { color: #00c; } a:visited { color: #551a8b; }
+  .text { max-width: 640px; margin: 0 auto; text-align: left; }
+  pre { background: #f0f0f0; padding: 10px; overflow-x: auto; font-size: 14px; }
+  footer { font: 13px Arial, sans-serif; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="titlebar">Retrofind</div>
+  <main class="page">
+    <h1 aria-label="Retrofind"><span class="b">R</span><span class="r">e</span><span class="y">t</span><span class="b">r</span><span class="g">o</span><span class="r">f</span><span class="b">i</span><span class="y">n</span><span class="g">d</span></h1>
+    <p>Private web search on your own Mac, in the style of 1998.</p>
+    <p><img src="home.png" alt="The Retrofind start page inside a Windows 98 window over a cloudy sky" width="1200" height="760"></p>
+    <div class="text">
+      <h2>What it is</h2>
+      <p>Retrofind runs <a href="https://github.com/searxng/searxng">SearXNG</a>, a metasearch engine, on your own computer, without Docker. On top sits a start page and results page modelled on Google in 1998, in a Windows 98 window whose frame, title bar and taskbar are made of liquid glass.</p>
+      <p>Your searches go from your browser to your Mac, then on to several search engines at once. No single search company sees all of them, and nothing is stored.</p>
+      <h2>Install</h2>
+      <p>You need macOS and <a href="https://brew.sh">Homebrew</a>.</p>
+      <pre>brew install uv
+git clone https://github.com/Gitguy268/retrofind.git</pre>
+      <p>Then double-click <code>start.command</code> in the <code>retrofind</code> folder. The first run takes a few minutes, and then it opens <code>http://127.0.0.1:8898/</code>.</p>
+      <p>Search runs only on your computer, so there is no search box on this website.</p>
+      <p><img src="results.png" alt="Retrofind results with blue titles, snippets and green URLs" width="1200" height="760" loading="lazy"></p>
+    </div>
+    <footer>
+      <p><a href="https://github.com/Gitguy268/retrofind">Source on GitHub</a> · MIT licence · Not affiliated with Google or Microsoft.</p>
+    </footer>
+  </main>
+</div>
+</body>
+</html>

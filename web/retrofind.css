@@ -1,0 +1,183 @@
+/* Copyright (c) 2026 Lucas Van De Weerd. MIT. */
+:root {
+  --face: #c0c0c0;
+  --raised: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+  --sunken: inset -1px -1px #fff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  --ui: 11px 'Microsoft Sans Serif', Tahoma, Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: #2f6fc4; font: var(--ui); overflow: hidden; }
+#desktop { position: fixed; inset: 0; width: 100%; height: 100%; }
+
+button, .tool, .start, .task {
+  font: var(--ui);
+  color: #000;
+  background: var(--face);
+  border: 0;
+  box-shadow: var(--raised);
+  padding: 4px 10px;
+  min-height: 23px;
+  text-decoration: none;
+  cursor: default;
+}
+button:active, .tool:active, .task[aria-pressed='true'] { box-shadow: var(--sunken); }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 1px dotted #000; outline-offset: -4px; }
+input[type='search'], .address input {
+  font: 13px Arial, sans-serif;
+  border: 0;
+  padding: 3px 4px;
+  box-shadow: var(--sunken);
+  background: #fff;
+}
+
+/* Window. Its frame, title bar and toolbar are see-through glass over the clouds. */
+.window {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  translate: -50% 0;
+  width: min(880px, calc(100vw - 24px));
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  box-shadow: var(--raised);
+}
+.window.maximized { top: 0; width: 100vw; bottom: 30px; }
+.window[hidden] { display: none; }
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 3px 3px 4px;
+  color: #fff;
+  font-weight: bold;
+  /* White text stays on the navy end; the light end only sits under the grey buttons. */
+  background: linear-gradient(90deg, rgb(0 0 128 / 0.82), rgb(16 132 208 / 0.5));
+}
+.title { flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-shadow: 0 1px 2px rgb(0 0 60 / 0.6); }
+.controls { display: flex; gap: 2px; }
+.controls button { width: 18px; min-height: 16px; height: 16px; padding: 0; font: bold 12px/1 Arial, sans-serif; }
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 2px;
+  background: rgb(222 222 222 / 0.55);
+}
+.toolbar button, .toolbar .tool { display: inline-flex; align-items: center; background: transparent; box-shadow: none; padding: 3px 8px; }
+.toolbar button:hover, .toolbar .tool:hover { box-shadow: var(--raised); background: rgb(192 192 192 / 0.6); }
+.address { flex: 1; display: flex; align-items: center; gap: 6px; margin-left: 8px; color: #000; }
+.address input { flex: 1; min-width: 0; font: var(--ui); }
+.page {
+  flex: 1;
+  overflow: auto;
+  background: #fff;
+  box-shadow: var(--sunken);
+  padding: 2px;
+  font: 16px 'Times New Roman', Times, serif;
+  color: #000;
+}
+.page a { color: #00c; }
+.page a:visited { color: #551a8b; }
+.statusbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0 0;
+  padding: 3px 6px;
+  color: #000;
+  background: rgb(222 222 222 / 0.55);
+  box-shadow: var(--sunken);
+}
+
+/* 1998 start page. */
+#home { text-align: center; padding: 48px 12px 24px; }
+.logo { margin: 0; font: bold 76px/1 Baskerville, 'Book Antiqua', Georgia, serif; letter-spacing: -1px; }
+.logo span { text-shadow: 4px 4px 0 #a9a9a9; }
+.logo span:nth-child(9n + 1), .logo span:nth-child(9n + 4), .logo span:nth-child(9n + 7) { color: #1f3fcf; }
+.logo span:nth-child(9n + 2), .logo span:nth-child(9n + 6) { color: #d62916; }
+.logo span:nth-child(9n + 3), .logo span:nth-child(9n + 8) { color: #e9a800; }
+.logo span:nth-child(9n + 5), .logo span:nth-child(9n + 9) { color: #158a2a; }
+.logo sup { font: bold 13px Arial, sans-serif; color: #d62916; vertical-align: top; margin-left: 4px; }
+.home-form { margin: 18px 0 30px; }
+.home-form p { margin: 8px 0; }
+.home-form input[type='search'] { width: min(100%, 360px); }
+.buttons { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+fieldset { display: inline-flex; align-items: baseline; gap: 14px; border: 0; padding: 0; margin: 6px 0 0; font: 13px Arial, sans-serif; }
+legend { float: left; padding: 0; margin-right: 6px; }
+.small { font: 13px Arial, sans-serif; color: #000; }
+
+/* 1998 results page. */
+#results { padding: 10px 14px 24px; }
+.top-form { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 14px; }
+.small-logo { font-size: 38px; text-decoration: none; }
+.small-logo span { text-shadow: 2px 2px 0 #a9a9a9; }
+.bar {
+  margin: 10px 0;
+  padding: 3px 6px;
+  border-top: 1px solid #36c;
+  background: #e5ecf9;
+  font: 13px Arial, sans-serif;
+}
+#notes p { margin: 6px 0; font: 15px 'Times New Roman', serif; }
+#notes .answer { max-width: 640px; padding: 6px 8px; background: #ffffe1; border: 1px solid #000; font-size: 15px; }
+#list { list-style: none; padding: 0; margin: 0; max-width: 640px; }
+#list li { margin: 0 0 16px; }
+#list .snippet { font-size: 14px; margin: 2px 0; }
+#list .url { color: #008000; font-size: 13px; overflow-wrap: anywhere; }
+#list .engine { color: #666; font-size: 13px; }
+#pager { margin: 20px 0 0; text-align: center; font: 13px Arial, sans-serif; display: flex; justify-content: center; align-items: flex-start; gap: 4px; }
+#pager a, #pager b { display: inline-flex; flex-direction: column; align-items: center; text-decoration: none; }
+#pager .logo { font-size: 34px; text-shadow: 2px 2px 0 #a9a9a9; }
+#pager .blue { color: #1f3fcf; }
+#pager .red, #pager b .logo { color: #d62916; }
+#pager .yellow { color: #e9a800; }
+#pager .green { color: #158a2a; }
+#pager .num { font: 13px Arial, sans-serif; color: #00c; text-decoration: underline; }
+#pager b .num { color: #d62916; text-decoration: none; font-weight: bold; }
+
+/* Taskbar and Start button. */
+.taskbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 3px 2px;
+  background: rgb(192 192 192 / 0.45);
+  box-shadow: inset 0 1px #dfdfdf, inset 0 2px #fff;
+}
+.start, .task { display: inline-flex; align-items: center; gap: 4px; height: 23px; }
+.start { font-weight: bold; padding: 2px 6px; }
+.task { width: 160px; justify-content: flex-start; }
+.clock { margin-left: auto; padding: 4px 10px; box-shadow: inset -1px -1px #fff, inset 1px 1px #808080; color: #000; }
+
+/* Win98 message box. */
+dialog { padding: 3px; border: 0; background: var(--face); box-shadow: var(--raised); min-width: min(360px, 90vw); }
+dialog::backdrop { background: transparent; }
+.dialog-body { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; padding: 14px 12px 10px; }
+.dialog-body p { margin: 0; color: #000; }
+.dialog-body button { grid-column: 1 / -1; justify-self: center; min-width: 75px; }
+
+/* Glass hosts: kwlck's layer refracts; our tints above stay on top of it. */
+.lg-host { --lg-radius: 0; --lg-solid: #c0c0c0; }
+.lg-host > .lg-layer { --lg-tint: transparent; box-shadow: none; }
+.start.lg-host, .task.lg-host { background: rgb(210 210 210 / 0.55); }
+/* Edge highlights adapted from kevinbism/liquid-glass-effect (MIT); see NOTICE. */
+.lg-host > .lg-sheen { box-shadow: inset -10px -8px 0 -11px #fff, inset 0 -9px 0 -8px #fff, inset 0 1px 1px #fff9; }
+
+@media (prefers-reduced-transparency: reduce) {
+  .titlebar { background: linear-gradient(90deg, #000080, #1084d0); }
+  .toolbar, .statusbar, .taskbar, .start.lg-host, .task.lg-host { background: var(--face); }
+}
+@media (max-width: 560px) {
+  .window { top: 0; width: 100vw; bottom: 30px; }
+  .logo { font-size: 52px; }
+  .address { display: none; }
+  .task { width: auto; }
+}

@@ -1,0 +1,44 @@
+Retrofind
+Copyright (c) 2026 Lucas Van De Weerd. MIT; see LICENSE.
+
+Retrofind is not affiliated with, endorsed by or connected to Google LLC or
+Microsoft Corporation. "Google" is a trademark of Google LLC; "Windows" and
+"Internet Explorer" are trademarks of Microsoft Corporation. The Retrofind
+wordmark, the Win98-style chrome, the icon and the cloud wallpaper are original
+drawings in CSS, SVG and canvas code; no Google or Microsoft artwork, fonts or
+files are included. The pages use fonts already installed on your computer.
+
+-------------------------------------------------------------------------------
+SearXNG (not included)
+-------------------------------------------------------------------------------
+https://github.com/searxng/searxng, AGPL-3.0.
+searxng/install.sh downloads SearXNG at a pinned commit and runs it,
+unmodified, as a separate local program. Retrofind talks to it only over its
+HTTP JSON API. No SearXNG code is copied into this repository.
+
+-------------------------------------------------------------------------------
+Code used
+-------------------------------------------------------------------------------
+Liquid Glass for Web, Copyright (c) 2026 kwlck, MIT.
+  https://github.com/kwlck/liquid-glass-web
+  web/vendor/liquid-glass-web/: runtime files, unmodified. Full licence there.
+
+Liquid Glass Effect, Copyright (c) 2025 Kevin Ramirez, MIT.
+  https://github.com/kevinbism/liquid-glass-effect
+  The inset edge-highlight shadows on glass surfaces (web/retrofind.css).
+  Full licence in web/vendor/liquid-glass-effect/LICENSE.
+
+Qrer, Copyright (c) 2026 Lucas Van De Weerd, MIT.
+  The procedural cloud wallpaper (web/wallpaper.js).
+
+-------------------------------------------------------------------------------
+Ideas, no code
+-------------------------------------------------------------------------------
+These projects inspired parts of the design. Nothing was copied from them.
+
+- onepointfive-REAL/google-search-lite (no licence): a lightweight,
+  Google-style search page.
+- gaoryrt/retro-404 (no licence): a Win98 message box for error pages.
+- azayrahmad/win98-web (MIT): a Win98 desktop with a taskbar in the browser.
+- xenitV1/liquid-glass-skill (MIT): keep glass on chrome over a detailed
+  backdrop, and keep reading text on solid surfaces.

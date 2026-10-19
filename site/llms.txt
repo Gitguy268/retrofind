@@ -1,0 +1,7 @@
+# Retrofind
+
+> Private web search on your own Mac, in the style of 1998. SearXNG runs natively (no Docker) on 127.0.0.1, behind an early-Google-style start page in a Windows 98 liquid glass window. MIT licence.
+
+- [Source and README](https://github.com/Gitguy268/retrofind): install with `brew install uv`, clone, double-click start.command; opens http://127.0.0.1:8898/
+- [Security policy](https://github.com/Gitguy268/retrofind/blob/HEAD/SECURITY.md)
+- [Credits and licences](https://github.com/Gitguy268/retrofind/blob/HEAD/NOTICE)

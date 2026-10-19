@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Least privilege: nothing here needs to write.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Unit tests, shellcheck, links
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover tests
+      - run: shellcheck start.command searxng/*.sh searxng/*.command
+      - run: cp docs/img/*.png web/favicon.svg site/ # as the Pages workflow does
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --no-progress --exclude '^http://127\.0\.0\.1' --exclude '^https://gitguy268\.github\.io/retrofind' --exclude '^https://github\.com/Gitguy268/retrofind/(issues|security)/' README.md NOTICE CONTRIBUTING.md SECURITY.md site/index.html
+          fail: true
