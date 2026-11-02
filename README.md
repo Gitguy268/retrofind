@@ -15,6 +15,27 @@ Private web search on your own Mac, in the style of 1998. Underneath, [SearXNG](
 
 </div>
 
+<!-- run-steps:start -->
+## Run it locally, step by step
+
+1. **Install [Homebrew](https://brew.sh)** (macOS), then uv:
+
+   ```sh
+   brew install uv
+   ```
+
+2. **Get the code:**
+
+   ```sh
+   git clone https://github.com/Gitguy268/retrofind.git
+   cd retrofind
+   ```
+
+3. **Start it** by double-clicking `start.command`. The first run installs SearXNG, which takes a few minutes.
+
+4. **Open <http://127.0.0.1:8898/>** in your browser. Both services start again when you log in; see the uninstall notes below to remove them.
+<!-- run-steps:end -->
+
 ## Features
 
 - **Local search.** SearXNG asks several search engines at once and runs on `127.0.0.1`, so no single search company sees your searches.
@@ -30,7 +51,7 @@ Private web search on your own Mac, in the style of 1998. Underneath, [SearXNG](
 
 You need macOS and [Homebrew](https://brew.sh).
 
-1. **Get the code.** Retrofind isn't on GitHub yet, so start from a copy of this folder, then install uv:
+1. **Get the code.** Clone this repository, then install uv:
    ```sh
    brew install uv
    ```
