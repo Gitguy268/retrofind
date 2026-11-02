@@ -15,6 +15,10 @@ Private web search on your own Mac, in the style of 1998. Underneath, [SearXNG](
 
 </div>
 
+<!-- live-links -->
+**Live:** [gitguy268.github.io/retrofind](https://gitguy268.github.io/retrofind/) · [retrofind.vercel.app](https://retrofind.vercel.app)
+<!-- /live-links -->
+
 <!-- run-steps:start -->
 ## Run it locally, step by step
 
