@@ -19,6 +19,15 @@ Private web search on your own Mac, in the style of 1998. Underneath, [SearXNG](
 **Live:** [gitguy268.github.io/retrofind](https://gitguy268.github.io/retrofind/) · [retrofind.vercel.app](https://retrofind.vercel.app)
 <!-- /live-links -->
 
+## Install with Homebrew
+
+```sh
+brew trust gitguy268/tap
+brew install gitguy268/tap/retrofind
+```
+
+Then run `retrofind`: the first run installs SearXNG and opens <http://127.0.0.1:8898/>. Run `retrofind uninstall` before `brew uninstall retrofind`.
+
 <!-- run-steps:start -->
 ## Run it locally, step by step
 
